@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { BrandService } from './components/services/brand.service';
+import { Brand } from './models/brand';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'RentACar';
+
 }
