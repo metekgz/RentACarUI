@@ -12,7 +12,8 @@ import { TotalPricePipe } from './pipes/total-price.pipe';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './pipes/filter.pipe';
 import { ToastrModule } from 'ngx-toastr';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { CartSummaryComponent } from './components/cart-summary/cart-summary.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
     BrandComponent,
     ModelComponent,
     TotalPricePipe,
-    FilterPipe
+    FilterPipe,
+    CartSummaryComponent
   ],
   imports: [
     BrowserModule,
