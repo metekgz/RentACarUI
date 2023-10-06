@@ -1,7 +1,11 @@
 <ul class="list-group">
+  <li style="cursor: pointer" [ngClass]="getAllBrands()" routerLink="/cars">
+    Tüm Araçlar
+  </li>
   <li
+    style="cursor: pointer"
     (click)="setCurrentBrand(brand)"
-    routerLink="/cars/brandId/{{brand.id}}"
+    routerLink="/cars/brandId/{{ brand.id }}"
     *ngFor="let brand of brands"
     [class]="getCurrentBrand(brand)"
   >
@@ -9,4 +13,4 @@
   </li>
 </ul>
 
-<h5 *ngIf="currentBrand">{{ currentBrand.name }} seçili</h5>
+<!-- <h5 *ngIf="currentBrand">{{ currentBrand.name }} seçili</h5> -->

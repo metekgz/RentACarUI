@@ -1,8 +1,41 @@
-<table class="table">
-    <thead>
-        <tr *ngFor="let car of cars">
-            <td>{{ car.id }}</td>
-            <td>{{ car.plate }}</td>
-          </tr>
-    </thead>
-</table>
+<!-- <div *ngIf="dataLoaded == false" class="spinner-border text-info" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div> -->
+
+<div class="mt-2 mb-2">
+  <input
+    type="text"
+    [(ngModel)]="filterText"
+    class="form-control"
+    id="filterText"
+    placeholder="Aradığınız fiyatı giriniz"
+  />
+</div>
+
+<div *ngIf="filterText" class="alert alert-primary">
+  {{ filterText }}
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let car of cars | filter : filterText">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-text">Model Name: {{ car.modelName }}</h5>
+          <p class="card-text">Model Year: {{ car.modelYear }}</p>
+          <p class="card-text">Daily Price: {{ car.dailyPrice }}</p>
+          <p class="card-text">State: {{ car.state }}</p>
+          <div class="d-flex justify-content-end">
+            <button
+              (click)="addToCart(car)"
+              type="button"
+              class="btn btn-primary"
+            >
+              Rent
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

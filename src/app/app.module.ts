@@ -8,19 +8,31 @@ import { BrandComponent } from './components/brand/brand.component';
 import { ModelComponent } from './components/model/model.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CarComponent } from './components/car/car.component';
+import { TotalPricePipe } from './pipes/total-price.pipe';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './pipes/filter.pipe';
+import { ToastrModule } from 'ngx-toastr';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
 
 @NgModule({
   declarations: [
     AppComponent,
+    CarComponent,
     NaviComponent,
     BrandComponent,
     ModelComponent,
-    CarComponent
+    TotalPricePipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass:"toast-bottom-right"
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

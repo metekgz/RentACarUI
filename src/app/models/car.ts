@@ -3,5 +3,7 @@ export interface Car{
     plate:string;
     dailyPrice:string;
     modelYear:string;
-    state:number
+    state:number;
+    modelName:string;
+    
 }
