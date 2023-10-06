@@ -5,6 +5,7 @@ import { CarComponent } from './components/car/car.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: CarComponent },
   { path: 'cars', component: CarComponent },
+  { path: 'cars/brandId/:id', component: CarComponent },
 ];
 
 @NgModule({
