@@ -1,7 +1,7 @@
 
-<table class="table">
-    <tr *ngFor="let brand of brands">
-        <td>{{brand.id}}</td>
-        <td>{{brand.name}}</td>
-    </tr>
-</table>
+<ul class="list-group">
+    <li (click)="setCurrentBrand(brand)" *ngFor="let brand of brands" [class]="getCurrentBrand(brand)">{{brand.name}}</li>
+  </ul>
+
+  <h5 *ngIf="currentBrand"> {{currentBrand.name}} seçili</h5>
+ 
