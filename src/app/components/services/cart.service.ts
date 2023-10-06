@@ -23,7 +23,7 @@ export class CartService {
   }
 
   removeFromCart(car:Car){
-    let item = CartItems.find(c=> c.car.id === car.id);
+    let item:CartItem = CartItems.find(c=> c.car.id === car.id);
     CartItems.splice(CartItems.indexOf(item),1);
   }
 

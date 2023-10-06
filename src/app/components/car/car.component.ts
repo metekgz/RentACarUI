@@ -46,6 +46,5 @@ export class CarComponent implements OnInit {
   addToCart(car: Car) {
     this.toastrService.success('Sepete Eklendi', car.modelName);
     this.cartService.addToCart(car);
-    console.log(car.modelName + " Eklendi")
   }
 }

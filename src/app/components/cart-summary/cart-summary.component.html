@@ -1,0 +1,26 @@
+<li *ngIf="cartItems" class="nav-item dropdown">
+  <a
+    class="nav-link dropdown-toggle"
+    id="navbarDropdown"
+    role="button"
+    data-bs-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    Rent List
+  </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <li *ngFor="let cartItem of cartItems" class="my-2 ">
+        <div class="d-flex justify-content-between">
+            <a class="dropdown-item">{{ cartItem.car.modelName }}</a>
+            <button class="btn btn-danger btn-sm me-2" (click)="removeFromCart(cartItem.car)">Sil</button>
+          </div>
+    </li>
+    <li>
+      <div class="dropdown-divider"></div>
+    </li>
+    <li>
+      <a class="dropdown-item">Rent</a>
+    </li>
+  </div>
+</li>
