@@ -1,7 +1,3 @@
-<!-- <div *ngIf="dataLoaded == false" class="spinner-border text-info" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div> -->
-
 <div class="mt-2 mb-2">
   <input
     type="text"
@@ -16,32 +12,28 @@
   {{ filterText }}
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-4 mb-4" *ngFor="let car of cars | filter : filterText">
-      <div class="card">
-        <img class="card-img-top" [src]="car.carImg" alt="Car Image" />
+<div class="row">
+  <div class="col-md-4 mb-4" *ngFor="let car of cars | filter : filterText">
+    <div class="card">
+      <img class="card-img-top" [src]="car.carImg" alt="Car Image" />
 
-        <div class="card-body">
-          <p class="card-text">
-            <strong>Model Name:</strong> {{ car.modelName }}
-          </p>
+      <div class="card-body">
+        <p class="card-text">
+          <strong>{{ car.modelName }}</strong> 
+        </p>
+        <div class="card-info">
           <p class="card-text">
             <strong>Model Year:</strong> {{ car.modelYear }}
           </p>
           <p class="card-text">
             <strong>Daily Price:</strong> {{ car.dailyPrice }}
           </p>
-          <p class="card-text"><strong>State:</strong> {{ car.state }}</p>
-          <div class="d-flex justify-content-end">
-            <button
-              (click)="addToCart(car)"
-              type="button"
-              class="btn btn-primary"
-            >
-              Rent
-            </button>
-          </div>
+          <!-- <p class="card-text"><strong>State:</strong> {{ car.state }}</p> -->
+        </div>
+        <div class="d-flex justify-content-end">
+          <button (click)="addToCart(car)" type="button" class="btn btn-primary">
+            Rent
+          </button>
         </div>
       </div>
     </div>

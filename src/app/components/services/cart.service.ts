@@ -13,11 +13,11 @@ export class CartService {
   addToCart(car: Car) {
     let item = CartItems.find(c=> c.car.id === car.id);
     if (item) {
-      item.totalPrice += 1;
+      item.quantity += 1;
     } else {
       let cartItem = new CartItem();
       cartItem.car = car;
-      cartItem.totalPrice = 1;
+      cartItem.quantity = 1;
       CartItems.push(cartItem);
     }
   }

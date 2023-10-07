@@ -13,12 +13,13 @@ import { ToastrService } from 'ngx-toastr';
 export class CarComponent implements OnInit {
   cars: Car[] = [];
   filterText = '';
+  showInfo: boolean[] = [];
 
   constructor(
     private carService: CarService,
     private activatedRoute: ActivatedRoute,
     private toastrService: ToastrService,
-    private cartService:CartService
+    private cartService: CartService
   ) {}
 
   ngOnInit(): void {
@@ -34,17 +35,31 @@ export class CarComponent implements OnInit {
   getCars() {
     this.carService.getCars().subscribe((response) => {
       this.cars = response;
+      this.initializeShowInfoArray();
     });
   }
 
   getCarsByBrand(id: number) {
     this.carService.getCarsByBrand(id).subscribe((response) => {
       this.cars = response;
+      this.initializeShowInfoArray();
     });
+  }
+
+  initializeShowInfoArray() {
+    this.showInfo = Array(this.cars.length).fill(false);
   }
 
   addToCart(car: Car) {
     this.toastrService.success('Sepete Eklendi', car.modelName);
     this.cartService.addToCart(car);
+  }
+
+  showAdditionalInfo(index: number) {
+    this.showInfo[index] = true;
+  }
+
+  hideAdditionalInfo(index: number) {
+    this.showInfo[index] = false;
   }
 }
