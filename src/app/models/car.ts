@@ -5,5 +5,5 @@ export interface Car{
     modelYear:string;
     state:number;
     modelName:string;
-    
+    carImg:string
 }

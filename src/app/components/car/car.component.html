@@ -8,7 +8,7 @@
     [(ngModel)]="filterText"
     class="form-control"
     id="filterText"
-    placeholder="Aradığınız fiyatı giriniz"
+    placeholder="Aradığınız modeli giriniz"
   />
 </div>
 
@@ -20,11 +20,19 @@
   <div class="row">
     <div class="col-md-4 mb-4" *ngFor="let car of cars | filter : filterText">
       <div class="card">
+        <img class="card-img-top" [src]="car.carImg" alt="Car Image" />
+
         <div class="card-body">
-          <h5 class="card-text">Model Name: {{ car.modelName }}</h5>
-          <p class="card-text">Model Year: {{ car.modelYear }}</p>
-          <p class="card-text">Daily Price: {{ car.dailyPrice }}</p>
-          <p class="card-text">State: {{ car.state }}</p>
+          <p class="card-text">
+            <strong>Model Name:</strong> {{ car.modelName }}
+          </p>
+          <p class="card-text">
+            <strong>Model Year:</strong> {{ car.modelYear }}
+          </p>
+          <p class="card-text">
+            <strong>Daily Price:</strong> {{ car.dailyPrice }}
+          </p>
+          <p class="card-text"><strong>State:</strong> {{ car.state }}</p>
           <div class="d-flex justify-content-end">
             <button
               (click)="addToCart(car)"

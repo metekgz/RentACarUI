@@ -22,7 +22,7 @@ export class BrandComponent implements OnInit {
     });
   }
 
-  setCurrentBrand(brand:Brand){
+  setCurrentBrand(brand:Brand | null){
     this.currentBrand = brand
   }
 
