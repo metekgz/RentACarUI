@@ -15,7 +15,7 @@
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 1.0s ease, opacity 0.8s ease;
+  transition: max-height 1.5s ease, opacity 0.8s ease;
 }
 
 .card:hover .card-info {
@@ -23,3 +23,8 @@
   opacity: 1;
 }
 
+.cardModel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
