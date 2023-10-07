@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Car } from 'src/app/models/car';
+import { CarService } from '../services/car.service';
 
 @Component({
   selector: 'app-rent',
@@ -7,5 +9,8 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./rent.component.css'],
 })
 export class RentComponent {
-  constructor(public modal: NgbActiveModal) {}
+  @Input() car:Car;
+  constructor(public modal: NgbActiveModal,private carService: CarService) {}
+
+ 
 }

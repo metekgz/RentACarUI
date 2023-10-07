@@ -5,11 +5,11 @@
     margin: 0 auto;
   }
 
-  .card-body {
+.card-body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-  }
+}
 
 .card-info {
   opacity: 0;

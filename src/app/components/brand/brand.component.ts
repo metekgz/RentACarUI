@@ -9,7 +9,7 @@ import { BrandService } from '../services/brand.service';
 })
 export class BrandComponent implements OnInit {
   brands: Brand[] = [];
-  currentBrand:Brand;
+  currentBrand: Brand;
   constructor(private brandService: BrandService) {}
 
   ngOnInit(): void {
@@ -22,15 +22,15 @@ export class BrandComponent implements OnInit {
     });
   }
 
-  setCurrentBrand(brand:Brand | null){
-    this.currentBrand = brand
+  setCurrentBrand(brand: Brand | null) {
+    this.currentBrand = brand;
   }
 
-  getCurrentBrand(brand:Brand){
-    if(brand == this.currentBrand){
-      return "list-group-item active"
-    }else{
-      return "list-group-item"
+  getCurrentBrand(brand: Brand) {
+    if (brand == this.currentBrand) {
+      return 'list-group-item active';
+    } else {
+      return 'list-group-item';
     }
   }
   getAllBrands() {
