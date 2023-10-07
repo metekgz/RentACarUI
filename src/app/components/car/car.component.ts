@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from 'src/app/models/car';
 import { CarService } from '../services/car.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from '../services/cart.service';
 import { ToastrService } from 'ngx-toastr';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { RentComponent } from '../rent/rent.component';
 
 @Component({
   selector: 'app-car',
@@ -19,7 +21,9 @@ export class CarComponent implements OnInit {
     private carService: CarService,
     private activatedRoute: ActivatedRoute,
     private toastrService: ToastrService,
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router,
+    private modalService: NgbModal
   ) {}
 
   ngOnInit(): void {
@@ -30,6 +34,11 @@ export class CarComponent implements OnInit {
         this.getCars();
       }
     });
+  }
+
+  goToRent(car: Car) {
+    const modalRef = this.modalService.open(RentComponent, { centered: true });
+    modalRef.componentInstance.car = car;
   }
 
   getCars() {
@@ -62,5 +71,4 @@ export class CarComponent implements OnInit {
   hideAdditionalInfo(index: number) {
     this.showInfo[index] = false;
   }
-  
 }

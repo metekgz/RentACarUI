@@ -32,20 +32,16 @@
           </p>
           <p class="card-text d-flex justify-content-end">
             <button
-              (click)="addToCart(car)"
               type="button"
               class="btn btn-primary"
+              data-toggle="modal"
+              (click)="goToRent(car)"
+              data-target="#exampleModalCenter"
             >
               Rent
             </button>
           </p>
-          <!-- <p class="card-text"><strong>State:</strong> {{ car.state }}</p> -->
         </div>
-        <!-- <div class="d-flex justify-content-end mt-3">
-          <button (click)="addToCart(car)" type="button" class="btn btn-primary">
-            Rent
-          </button>
-        </div> -->
       </div>
     </div>
   </div>

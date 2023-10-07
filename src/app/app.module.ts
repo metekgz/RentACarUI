@@ -16,6 +16,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 import { CarAddComponent } from './components/car-add/car-add.component';
 import { RentComponent } from './components/rent/rent.component'
+import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -37,9 +39,13 @@ import { RentComponent } from './components/rent/rent.component'
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    RouterModule.forRoot([
+      { path: 'rent', component: RentComponent },
+    ]),
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"
-    })
+    }),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
