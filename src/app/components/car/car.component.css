@@ -28,3 +28,10 @@
     flex-direction: column;
     align-items: center;
 }
+
+.card-center{
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+}

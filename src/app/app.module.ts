@@ -14,7 +14,8 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { ToastrModule } from 'ngx-toastr';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
-import { CarAddComponent } from './components/car-add/car-add.component'
+import { CarAddComponent } from './components/car-add/car-add.component';
+import { RentComponent } from './components/rent/rent.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CarAddComponent } from './components/car-add/car-add.component'
     TotalPricePipe,
     FilterPipe,
     CartSummaryComponent,
-    CarAddComponent
+    CarAddComponent,
+    RentComponent
   ],
   imports: [
     BrowserModule,

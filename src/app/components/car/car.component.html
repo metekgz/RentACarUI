@@ -18,9 +18,11 @@
       <img class="card-img-top" [src]="car.carImg" alt="Car Image" />
 
       <div class="card-body">
-        <p class="card-text cardModel">
-          <strong>{{ car.modelName }}</strong>
-        </p>
+        <div class="card-center">
+          <p>
+            <strong>{{ car.modelName }}</strong>
+          </p>
+        </div>
         <div class="card-info">
           <p class="card-text">
             <strong>Model Year:</strong> {{ car.modelYear }}
@@ -28,7 +30,6 @@
           <p class="card-text">
             <strong>Daily Price:</strong> {{ car.dailyPrice }}
           </p>
-
           <p class="card-text d-flex justify-content-end">
             <button
               (click)="addToCart(car)"

@@ -62,4 +62,5 @@ export class CarComponent implements OnInit {
   hideAdditionalInfo(index: number) {
     this.showInfo[index] = false;
   }
+  
 }
