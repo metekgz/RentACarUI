@@ -1,99 +1,5 @@
-<!-- <div class="card mt-4">
-  <div class="card-body mt-4">
-    <form [formGroup]="carAdd">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-floating mb-3">
-            <input
-              type="text"
-              class="form-control"
-              id="plate"
-              formControlName="plate"
-              placeholder=""
-            />
-            <label for="plate">Plate</label>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-floating mb-3">
-            <input
-              min="1"
-              type="number"
-              class="form-control"
-              id="dailyPrice"
-              formControlName="dailyPrice"
-              placeholder=""
-            />
-            <label for="dailyPrice">Daily Price</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-floating mb-3">
-            <input
-              min="1"
-              type="number"
-              class="form-control"
-              id="modelYear"
-              formControlName="modelYear"
-              placeholder=""
-            />
-            <label for="modelYear">Model Year</label>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-floating mb-3">
-            <input
-              min="1"
-              type="number"
-              class="form-control"
-              id="state"
-              formControlName="state"
-              placeholder=""
-            />
-            <label for="state">State</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-floating mb-3">
-            <input
-              min="1"
-              type="number"
-              class="form-control"
-              id="modelId"
-              formControlName="modelId"
-              placeholder=""
-            />
-            <label for="modelId">Model Id</label>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-floating mb-3">
-            <input
-              type="text"
-              class="form-control"
-              id="carImg"
-              formControlName="carImg"
-              placeholder=""
-            />
-            <label for="carImg">Car Img</label>
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
-  <div class="card-footer text-end mt-2">
-    <button class="btn btn-fill btn-primary" (click)="add()">Add</button>
-  </div>
-</div> -->
-
 <div class="modal-header">
-  <h4 class="modal-title"></h4>
+  <h4 class="modal-title">Car Update</h4>
   <div class="close-icon" (click)="modal.close()">
     <i class="fa fa-times"></i>
   </div>
@@ -123,19 +29,6 @@
             placeholder=""
           />
           <label for="plate">Plate</label>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-floating mb-3">
-          <input
-            min="1"
-            type="number"
-            class="form-control"
-            id="dailyPrice"
-            formControlName="dailyPrice"
-            placeholder=""
-          />
-          <label for="dailyPrice">Daily Price</label>
         </div>
       </div>
     </div>
@@ -194,6 +87,19 @@
           />
           <label for="carImg">Car Img</label>
         </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-floating mb-3">
+        <input
+          min="1"
+          type="number"
+          class="form-control"
+          id="dailyPrice"
+          formControlName="dailyPrice"
+          placeholder=""
+        />
+        <label for="dailyPrice">Daily Price</label>
       </div>
     </div>
   </form>

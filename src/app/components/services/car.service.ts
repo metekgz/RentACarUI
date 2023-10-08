@@ -29,6 +29,6 @@ export class CarService {
   }
 
   updateCar(car: Car) {
-    return this.httpClient.put(this.apiUrl + 'cars/update', car);
+    return this.httpClient.put(this.apiUrl + 'cars/update/{id}', car);
   }
 }
