@@ -18,6 +18,9 @@ import { CarAddComponent } from './components/car-add/car-add.component';
 import { RentComponent } from './components/rent/rent.component'
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CarProcessComponent } from './components/car-process/car-process.component';
+import { DeleteCarComponent } from './components/delete-car/delete-car.component';
+import { UpdateCarComponent } from './components/update-car/update-car.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FilterPipe,
     CartSummaryComponent,
     CarAddComponent,
-    RentComponent
+    RentComponent,
+    CarProcessComponent,
+    DeleteCarComponent,
+    UpdateCarComponent
   ],
   imports: [
     BrowserModule,

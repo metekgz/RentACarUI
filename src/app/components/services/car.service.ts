@@ -23,4 +23,12 @@ export class CarService {
   addCar(car: Car) {
     return this.httpClient.post(this.apiUrl + 'cars/add', car);
   }
+
+  deleteCar(id: number) {
+    return this.httpClient.delete(this.apiUrl + 'cars/delete/' + id);
+  }
+
+  updateCar(car: Car) {
+    return this.httpClient.put(this.apiUrl + 'cars/update', car);
+  }
 }
