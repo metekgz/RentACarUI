@@ -19,4 +19,8 @@ export class CarService {
     let newPath = this.apiUrl + 'cars/brandId/' + id;
     return this.httpClient.get<Car[]>(newPath);
   }
+
+  addCar(car: Car) {
+    return this.httpClient.post(this.apiUrl + 'cars/add', car);
+  }
 }
