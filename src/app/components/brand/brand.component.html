@@ -1,18 +1,17 @@
 <ul class="list-group my-2">
   <li
     class="list-group-item mb-2"
-    style="cursor: pointer"
     [ngClass]="getAllBrands()"
-    (click)="setCurrentBrand(null)"
+    (click)="clickBrand(null)"
     routerLink="/cars"
   >
     Tüm Araçlar
   </li>
   <li
     class="list-group-item mb-2"
-    style="cursor: pointer"
+   
     *ngFor="let brand of brands"
-    (click)="setCurrentBrand(brand)"
+    (click)="clickBrand(brand)"
     routerLink="/cars/brandId/{{ brand.id }}"
     [class]="getCurrentBrand(brand)"
   >

@@ -22,7 +22,7 @@ export class BrandComponent implements OnInit {
     });
   }
 
-  setCurrentBrand(brand: Brand | null) {
+  clickBrand(brand: Brand | null) {
     this.currentBrand = brand;
   }
 
