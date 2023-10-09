@@ -11,7 +11,6 @@ import { MaintenanceService } from '../../services/maintenance.service';
 })
 export class AddMaintenanceComponent implements OnInit {
   maintenanceAdd: FormGroup;
-  startDate: Date;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -21,15 +20,21 @@ export class AddMaintenanceComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.startDate = new Date();
-    this.addMaintenance();
-  }
+    // Otomatik olarak başlangıç tarihini ayarla
+    const currentDate = new Date();
+    const formattedDate = this.formatDate(currentDate);
 
-  addMaintenance() {
     this.maintenanceAdd = this.formBuilder.group({
-      startDate: [this.startDate, Validators.required],
+      startDate: [formattedDate, Validators.required],
       carId: ['', Validators.required],
     });
+  }
+
+  formatDate(date: Date): string {
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    return `${year}-${month}-${day}`;
   }
 
   add() {

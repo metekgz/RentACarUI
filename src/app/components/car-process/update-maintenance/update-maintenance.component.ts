@@ -12,6 +12,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class UpdateMaintenanceComponent implements OnInit {
   maintenanceUpdate: FormGroup;
   returnDate: Date;
+
   constructor(
     private formBuilder: FormBuilder,
     private maintenanceService: MaintenanceService,
@@ -20,15 +21,13 @@ export class UpdateMaintenanceComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.returnDate = new Date();
-    this.updateMaintenance();
-  }
+    const currentDate = new Date();
+    const formattedDate = this.formatDate(currentDate);
 
-  updateMaintenance() {
     this.maintenanceUpdate = this.formBuilder.group({
       id: ['', Validators.required],
       carId: ['', Validators.required],
-      returnDate: [this.returnDate, Validators.required],
+      returnDate: [formattedDate, Validators.required],
     });
   }
 
@@ -43,5 +42,11 @@ export class UpdateMaintenanceComponent implements OnInit {
     } else {
       this.toastrService.error('form eksik veya hatalı');
     }
+  }
+  formatDate(date: Date): string {
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    return `${year}-${month}-${day}`;
   }
 }

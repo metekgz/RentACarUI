@@ -10,6 +10,7 @@
       <div class="col-md-6">
         <div class="form-floating mb-3">
           <input
+            [readOnly]="true"
             type="date"
             class="form-control"
             id="startDate"
@@ -22,6 +23,7 @@
       <div class="col-md-6">
         <div class="form-floating mb-3">
           <input
+            min="1"
             type="number"
             class="form-control"
             id="carId"
