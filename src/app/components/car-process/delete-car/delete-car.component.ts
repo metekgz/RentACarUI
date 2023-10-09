@@ -19,10 +19,10 @@ export class DeleteCarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.createCar();
+    this.deleteCar();
   }
 
-  createCar() {
+  deleteCar() {
     this.carDelete = this.formBuilder.group({
       id: ['', Validators.required],
     });

@@ -45,6 +45,4 @@ export class CarAddComponent implements OnInit {
       this.toastrService.error('form eksik veya hatalı');
     }
   }
-
-  
 }

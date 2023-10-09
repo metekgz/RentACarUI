@@ -7,7 +7,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-update-car',
   templateUrl: './update-car.component.html',
-  styleUrls: ['./update-car.component.css']
+  styleUrls: ['./update-car.component.css'],
 })
 export class UpdateCarComponent implements OnInit {
   carUpdate: FormGroup;
@@ -19,12 +19,12 @@ export class UpdateCarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.createCar();
+    this.updateCar();
   }
 
-  createCar() {
+  updateCar() {
     this.carUpdate = this.formBuilder.group({
-      id:['',Validators.required],
+      id: ['', Validators.required],
       plate: ['', Validators.required],
       dailyPrice: ['', Validators.required],
       modelYear: ['', Validators.required],
@@ -46,7 +46,4 @@ export class UpdateCarComponent implements OnInit {
       this.toastrService.error('form eksik veya hatalı');
     }
   }
-
-  
 }
-

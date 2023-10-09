@@ -1,0 +1,43 @@
+<div class="modal-header">
+  <h4 class="modal-title">Maintenance Add</h4>
+  <div class="close-icon" (click)="modal.close()">
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+<div class="modal-body">
+  <form [formGroup]="maintenanceAdd">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-floating mb-3">
+          <input
+            type="date"
+            class="form-control"
+            id="startDate"
+            formControlName="startDate"
+            placeholder=""
+          />
+          <label for="startDate">Start Date</label>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-floating mb-3">
+          <input
+            type="number"
+            class="form-control"
+            id="carId"
+            formControlName="carId"
+            placeholder=""
+          />
+          <label for="carId">Car Id</label>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="modal.close()">
+    Close
+  </button>
+  <button class="btn btn-fill btn-primary" (click)="add()">Add</button>
+</div>

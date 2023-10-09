@@ -21,6 +21,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarProcessComponent } from './components/car-process/car-process.component';
 import { DeleteCarComponent } from './components/car-process/delete-car/delete-car.component';
 import { UpdateCarComponent } from './components/car-process/update-car/update-car.component';
+import { AddBrandComponent } from './components/car-process/add-brand/add-brand.component';
+import { DeleteBrandComponent } from './components/car-process/delete-brand/delete-brand.component';
+import { UpdateBrandComponent } from './components/car-process/update-brand/update-brand.component';
+import { AddModelComponent } from './components/car-process/add-model/add-model.component';
+import { AddMaintenanceComponent } from './components/car-process/add-maintenance/add-maintenance.component';
+import { UpdateMaintenanceComponent } from './components/car-process/update-maintenance/update-maintenance.component';
+import { DeleteMaintenanceComponent } from './components/car-process/delete-maintenance/delete-maintenance.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -36,7 +44,14 @@ import { UpdateCarComponent } from './components/car-process/update-car/update-c
     RentComponent,
     CarProcessComponent,
     DeleteCarComponent,
-    UpdateCarComponent
+    UpdateCarComponent,
+    AddBrandComponent,
+    DeleteBrandComponent,
+    UpdateBrandComponent,
+    AddModelComponent,
+    AddMaintenanceComponent,
+    UpdateMaintenanceComponent,
+    DeleteMaintenanceComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +66,7 @@ import { UpdateCarComponent } from './components/car-process/update-car/update-c
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"
     }),
-    NgbModule
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

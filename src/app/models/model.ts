@@ -1,5 +1,6 @@
-export interface Model{
-    modelId:number;
-    modelName:string;
-    // brand ve car eklenecek
+export interface Model {
+  id: number;
+  name: string;
+  brandId: number;
+  brandName: string;
 }

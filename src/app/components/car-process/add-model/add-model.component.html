@@ -1,0 +1,43 @@
+<div class="modal-header">
+  <h4 class="modal-title">Model Add</h4>
+  <div class="close-icon" (click)="modal.close()">
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+<div class="modal-body">
+  <form [formGroup]="modelAdd">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            formControlName="name"
+            placeholder=""
+          />
+          <label for="name">Model Name</label>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-floating mb-3">
+          <input
+            type="number"
+            class="form-control"
+            id="brandId"
+            formControlName="brandId"
+            placeholder=""
+          />
+          <label for="brandId">Brand Id</label>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="modal.close()">
+    Close
+  </button>
+  <button class="btn btn-fill btn-primary" (click)="add()">Add</button>
+</div>

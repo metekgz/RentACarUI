@@ -13,4 +13,16 @@ export class BrandService {
   getBrands(): Observable<Brand[]> {
     return this.httpClient.get<Brand[]>(this.apiUrl);
   }
+
+  addBrand(brand: Brand) {
+    return this.httpClient.post(this.apiUrl + '/add', brand);
+  }
+
+  deleteBrand(id: number) {
+    return this.httpClient.delete(this.apiUrl + '/delete/' + id);
+  }
+
+  updateBrand(brand: Brand) {
+    return this.httpClient.put(this.apiUrl + '/update/{id}', brand);
+  }
 }

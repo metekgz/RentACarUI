@@ -1,6 +1,6 @@
 .card-img-top {
     max-width: 60%;
-    height: auto;
+    min-height: 120px !important;
     display: block;
     margin: 0 auto;
   }
