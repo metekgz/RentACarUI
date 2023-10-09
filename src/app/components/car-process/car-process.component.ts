@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CarAddComponent } from '../car-add/car-add.component';
+import { CarAddComponent } from './car-add/car-add.component';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Car } from 'src/app/models/car';
-import { DeleteCarComponent } from '../delete-car/delete-car.component';
-import { UpdateCarComponent } from '../update-car/update-car.component';
+import { DeleteCarComponent } from './delete-car/delete-car.component';
+import { UpdateCarComponent } from './update-car/update-car.component';
 
 @Component({
   selector: 'app-car-process',

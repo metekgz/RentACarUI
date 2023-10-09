@@ -14,13 +14,13 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { ToastrModule } from 'ngx-toastr';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
-import { CarAddComponent } from './components/car-add/car-add.component';
+import { CarAddComponent } from './components/car-process/car-add/car-add.component';
 import { RentComponent } from './components/rent/rent.component'
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarProcessComponent } from './components/car-process/car-process.component';
-import { DeleteCarComponent } from './components/delete-car/delete-car.component';
-import { UpdateCarComponent } from './components/update-car/update-car.component';
+import { DeleteCarComponent } from './components/car-process/delete-car/delete-car.component';
+import { UpdateCarComponent } from './components/car-process/update-car/update-car.component';
 
 @NgModule({
   declarations: [

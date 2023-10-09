@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CarService } from '../services/car.service';
+import { CarService } from '../../services/car.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-update-car',
-  templateUrl: './update-car.component.html',
-  styleUrls: ['./update-car.component.css']
+  selector: 'app-car-add',
+  templateUrl: './car-add.component.html',
+  styleUrls: ['./car-add.component.css'],
 })
-export class UpdateCarComponent implements OnInit {
-  carUpdate: FormGroup;
+export class CarAddComponent implements OnInit {
+  carAdd: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
     private carService: CarService,
@@ -23,8 +23,7 @@ export class UpdateCarComponent implements OnInit {
   }
 
   createCar() {
-    this.carUpdate = this.formBuilder.group({
-      id:['',Validators.required],
+    this.carAdd = this.formBuilder.group({
       plate: ['', Validators.required],
       dailyPrice: ['', Validators.required],
       modelYear: ['', Validators.required],
@@ -34,10 +33,10 @@ export class UpdateCarComponent implements OnInit {
     });
   }
 
-  update() {
-    if (this.carUpdate.valid) {
-      let carModel = Object.assign({}, this.carUpdate.value);
-      this.carService.updateCar(carModel).subscribe((response) => {
+  add() {
+    if (this.carAdd.valid) {
+      let carModel = Object.assign({}, this.carAdd.value);
+      this.carService.addCar(carModel).subscribe((response) => {
         console.log(response);
 
         this.toastrService.success('Araç Eklendi');
@@ -49,4 +48,3 @@ export class UpdateCarComponent implements OnInit {
 
   
 }
-
