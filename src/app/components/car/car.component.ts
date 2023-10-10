@@ -6,6 +6,7 @@ import { CartService } from '../services/cart.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RentComponent } from '../rent/rent.component';
+import { CarMockService } from '../services/mock-services/concretes/car-mock.service';
 
 @Component({
   selector: 'app-car',
@@ -22,6 +23,7 @@ export class CarComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private toastrService: ToastrService,
     private cartService: CartService,
+    private carMockService: CarMockService,
     private router: Router,
     private modalService: NgbModal
   ) {}
@@ -29,7 +31,7 @@ export class CarComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       if (params['id']) {
-        this.getCarsByBrand(params['id']);
+        this.getCarsByBrand2(params['id']);
       } else {
         this.getCars();
       }
@@ -42,18 +44,26 @@ export class CarComponent implements OnInit {
   }
 
   getCars() {
-    this.carService.getCars().subscribe((response) => {
+    this.carMockService.getCars().subscribe((response) => {
       this.cars = response;
       this.initializeShowInfoArray();
     });
   }
 
-  getCarsByBrand(id: number) {
-    this.carService.getCarsByBrand(id).subscribe((response) => {
+  // getCarsByBrand(id: number) {
+  //   this.carService.getCarsByBrand(id).subscribe((response) => {
+  //     this.cars = response;
+  //     this.initializeShowInfoArray();
+  //   });
+  // }
+
+  getCarsByBrand2(id: number) {
+    this.carMockService.getBrandById(id).subscribe((response) => {
       this.cars = response;
       this.initializeShowInfoArray();
     });
   }
+
 
   initializeShowInfoArray() {
     this.showInfo = Array(this.cars.length).fill(false);

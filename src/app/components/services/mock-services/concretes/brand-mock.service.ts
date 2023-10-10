@@ -4,14 +4,12 @@ import { Observable } from 'rxjs';
 import { BrandAbstractService } from '../abstracts/brand-abstract.service';
 import { Brand } from 'src/app/models/brand';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BrandMockService implements BrandAbstractService {
-
   apiUrl = 'http://localhost:3000/brands';
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   getBrands(): Observable<Brand[]> {
     return this.httpClient.get<Brand[]>(this.apiUrl);
