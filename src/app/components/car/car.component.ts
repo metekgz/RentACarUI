@@ -7,6 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RentComponent } from '../rent/rent.component';
 import { CarMockService } from '../services/mock-services/concretes/car-mock.service';
+import { Model } from 'src/app/models/model';
 
 @Component({
   selector: 'app-car',
