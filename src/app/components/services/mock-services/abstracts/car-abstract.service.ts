@@ -8,4 +8,5 @@ import { Car } from 'src/app/models/car';
 export abstract class CarAbstractService {
 
   abstract getBrands(): Observable<Car[]>;
+
 }

@@ -9,5 +9,5 @@ export interface Car{
     modelId:number;
     modelName:string;
     imageUrl:string;
-    model:Model
+    model:Model;
 }

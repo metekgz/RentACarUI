@@ -28,7 +28,6 @@ import { AddModelComponent } from './components/car-process/add-model/add-model.
 import { AddMaintenanceComponent } from './components/car-process/add-maintenance/add-maintenance.component';
 import { UpdateMaintenanceComponent } from './components/car-process/update-maintenance/update-maintenance.component';
 import { DeleteMaintenanceComponent } from './components/car-process/delete-maintenance/delete-maintenance.component';
-import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
