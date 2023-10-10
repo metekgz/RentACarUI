@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Brand } from 'src/app/models/brand';
-import { BrandService } from '../services/brand.service';
+import { BrandMockService } from '../services/mock-services/concretes/brand-mock.service';
 
 @Component({
   selector: 'app-brand',
@@ -10,14 +10,14 @@ import { BrandService } from '../services/brand.service';
 export class BrandComponent implements OnInit {
   brands: Brand[] = [];
   currentBrand: Brand;
-  constructor(private brandService: BrandService) {}
+  constructor(private brandMockService:BrandMockService) {}
 
   ngOnInit(): void {
     this.getBrands();
   }
 
   getBrands() {
-    this.brandService.getBrands().subscribe((response) => {
+    this.brandMockService.getBrands().subscribe((response) => {
       this.brands = response;
     });
   }
