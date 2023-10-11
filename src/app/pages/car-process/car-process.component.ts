@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { CarAddComponent } from './car-add/car-add.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Car } from 'src/app/models/car';
 import { DeleteCarComponent } from './delete-car/delete-car.component';
 import { UpdateCarComponent } from './update-car/update-car.component';
 import { AddBrandComponent } from './add-brand/add-brand.component';
-import { Brand } from 'src/app/models/brand';
 import { DeleteBrandComponent } from './delete-brand/delete-brand.component';
 import { UpdateBrandComponent } from './update-brand/update-brand.component';
-import { Model } from 'src/app/models/model';
 import { AddModelComponent } from './add-model/add-model.component';
+import { Brand } from 'src/app/shared/models/brand';
+import { Car } from 'src/app/shared/models/car';
+import { Model } from 'src/app/shared/models/model';
 
 @Component({
   selector: 'app-car-process',

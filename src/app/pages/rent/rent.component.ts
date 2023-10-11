@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { Car } from 'src/app/models/car';
+import { Car } from 'src/app/shared/models/car';
 import { CarService } from 'src/app/shared/services/car.service';
 
 @Component({

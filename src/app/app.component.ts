@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Brand } from './models/brand';
 
 @Component({
   selector: 'app-root',

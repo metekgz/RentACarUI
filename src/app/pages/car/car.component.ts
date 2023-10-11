@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Car } from 'src/app/models/car';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RentComponent } from '../rent/rent.component';
-import { Model } from 'src/app/models/model';
 import { CarMockService } from 'src/app/shared/services/mock-services/concretes/car-mock.service';
+import { Car } from 'src/app/shared/models/car';
 
 @Component({
   selector: 'app-car',
