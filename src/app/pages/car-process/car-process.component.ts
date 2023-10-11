@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CarAddComponent } from './car-add/car-add.component';
+import { CarAddComponent } from './add-car/car-add.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DeleteCarComponent } from './delete-car/delete-car.component';
 import { UpdateCarComponent } from './update-car/update-car.component';

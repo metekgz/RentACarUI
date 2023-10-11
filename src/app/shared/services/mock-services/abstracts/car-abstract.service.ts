@@ -10,4 +10,6 @@ export abstract class CarAbstractService {
   abstract getCars(): Observable<Car[]>;
   
   abstract  getCarsByBrand(id: number): Observable<Car[]>;
+  
+  abstract addCar(car: Car): Observable<any>;
 }

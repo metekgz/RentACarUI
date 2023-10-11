@@ -24,4 +24,8 @@ export class CarMockService implements CarAbstractService {
     const url = `${this.apiUrl}?model.brandId=${brandId}`;
     return this.httpClient.get<Car[]>(url);
   }
+
+  addCar(car: Car) {
+    return this.httpClient.post(this.apiUrl + '/add', car);
+  }
 }

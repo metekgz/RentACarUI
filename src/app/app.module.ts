@@ -12,7 +12,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrandComponent } from './pages/brand/brand.component';
 import { AddBrandComponent } from './pages/car-process/add-brand/add-brand.component';
 import { AddModelComponent } from './pages/car-process/add-model/add-model.component';
-import { CarAddComponent } from './pages/car-process/car-add/car-add.component';
+import { CarAddComponent } from './pages/car-process/add-car/car-add.component';
 import { CarProcessComponent } from './pages/car-process/car-process.component';
 import { DeleteBrandComponent } from './pages/car-process/delete-brand/delete-brand.component';
 import { DeleteCarComponent } from './pages/car-process/delete-car/delete-car.component';
@@ -24,21 +24,14 @@ import { RentComponent } from './pages/rent/rent.component';
 import { CarComponent } from './pages/car/car.component';
 import { SharedModule } from './shared/shared.module';
 import { CarModule } from './pages/car/car.module';
+import { CarProcessModule } from './pages/car-process/car-process.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     BrandComponent,
     ModelComponent,
-    CarAddComponent,
     RentComponent,
-    CarProcessComponent,
-    DeleteCarComponent,
-    UpdateCarComponent,
-    AddBrandComponent,
-    DeleteBrandComponent,
-    UpdateBrandComponent,
-    AddModelComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +48,8 @@ import { CarModule } from './pages/car/car.module';
       positionClass:"toast-bottom-right"
     }),
     NgbModule,
-    CarModule
+    CarModule,
+    CarProcessModule
   ],
   providers: [],
   bootstrap: [AppComponent]

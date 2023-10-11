@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { CarService } from 'src/app/shared/services/car.service';
+import { CarAbstractService } from 'src/app/shared/services/mock-services/abstracts/car-abstract.service';
 
 @Component({
   selector: 'app-car-add',
@@ -13,7 +14,7 @@ export class CarAddComponent implements OnInit {
   carAdd: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
-    private carService: CarService,
+    private carService: CarAbstractService,
     private toastrService: ToastrService,
     public modal: NgbActiveModal
   ) {}
