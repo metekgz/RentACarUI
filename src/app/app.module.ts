@@ -23,11 +23,11 @@ import { ModelComponent } from './pages/model/model.component';
 import { RentComponent } from './pages/rent/rent.component';
 import { CarComponent } from './pages/car/car.component';
 import { SharedModule } from './shared/shared.module';
+import { CarModule } from './pages/car/car.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CarComponent,
     BrandComponent,
     ModelComponent,
     CarAddComponent,
@@ -55,6 +55,7 @@ import { SharedModule } from './shared/shared.module';
       positionClass:"toast-bottom-right"
     }),
     NgbModule,
+    CarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

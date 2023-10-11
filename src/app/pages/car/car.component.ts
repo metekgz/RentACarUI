@@ -3,8 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RentComponent } from '../rent/rent.component';
-import { CarMockService } from 'src/app/shared/services/mock-services/concretes/car-mock.service';
 import { Car } from 'src/app/shared/models/car';
+import { CarAbstractService } from 'src/app/shared/services/mock-services/abstracts/car-abstract.service';
 
 @Component({
   selector: 'app-car',
@@ -19,7 +19,7 @@ export class CarComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private toastrService: ToastrService,
-    private carMockService: CarMockService,
+    private carService: CarAbstractService,
     private router: Router,
     private modalService: NgbModal
   ) {}
@@ -40,14 +40,14 @@ export class CarComponent implements OnInit {
   }
 
   getCars() {
-    this.carMockService.getCars().subscribe((response) => {
+    this.carService.getCars().subscribe((response) => {
       this.cars = response;
       this.initializeShowInfoArray();
     });
   }
 
   getCarsByBrand(id: number) {
-    this.carMockService.getCarsByBrand(id).subscribe((response) => {
+    this.carService.getCarsByBrand(id).subscribe((response) => {
       this.cars = response;
       this.initializeShowInfoArray();
     });

@@ -7,6 +7,7 @@ import { Car } from 'src/app/shared/models/car';
 })
 export abstract class CarAbstractService {
 
-  abstract getBrands(): Observable<Car[]>;
-
+  abstract getCars(): Observable<Car[]>;
+  
+  abstract  getCarsByBrand(id: number): Observable<Car[]>;
 }

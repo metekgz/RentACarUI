@@ -10,27 +10,16 @@ import { BrandMockService } from './services/mock-services/concretes/brand-mock.
 import { FilterPipe } from './pipes/filter.pipe';
 import { TotalPricePipe } from './pipes/total-price.pipe';
 
-
-
 @NgModule({
-  declarations: [
-    NaviComponent,
-    FilterPipe,
-    TotalPricePipe
-
+  declarations: [NaviComponent, FilterPipe, TotalPricePipe],
+  imports: [CommonModule, RouterModule],
+  exports: [NaviComponent, FilterPipe, TotalPricePipe],
+  providers: [
+    CarService,
+    BrandService,
+    MaintenanceService,
+    BrandMockService,
+    CarMockService,
   ],
-  imports: [
-  CommonModule,
-  RouterModule
-  ],
-  exports:[
-    NaviComponent,
-    FilterPipe,
-    TotalPricePipe
-  ],
-  providers:[
-    CarService,BrandService,MaintenanceService,BrandMockService,CarMockService
-  ]
-
 })
-export class SharedModule { }
+export class SharedModule {}
