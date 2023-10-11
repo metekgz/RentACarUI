@@ -10,10 +10,6 @@ import { DeleteBrandComponent } from './delete-brand/delete-brand.component';
 import { UpdateBrandComponent } from './update-brand/update-brand.component';
 import { Model } from 'src/app/models/model';
 import { AddModelComponent } from './add-model/add-model.component';
-import { AddMaintenanceComponent } from './add-maintenance/add-maintenance.component';
-import { DeleteMaintenanceComponent } from './delete-maintenance/delete-maintenance.component';
-import { UpdateMaintenanceComponent } from './update-maintenance/update-maintenance.component';
-import { Maintenance } from 'src/app/models/maintenance';
 
 @Component({
   selector: 'app-car-process',
@@ -27,8 +23,6 @@ export class CarProcessComponent implements OnInit {
   brand: Brand;
   models: Model[] = [];
   model: Model;
-  maintenances: Maintenance[] = [];
-  maintenance: Maintenance;
   filterText = '';
   showInfo: boolean[] = [];
 
@@ -78,22 +72,22 @@ export class CarProcessComponent implements OnInit {
     });
     modalRef.componentInstance.model = model;
   }
-  addMaintenance(maintenance: Maintenance) {
-    const modalRef = this.modalService.open(AddMaintenanceComponent, {
-      centered: true,
-    });
-    modalRef.componentInstance.maintenance = maintenance;
-  }
-  deleteMaintenance(maintenance: Maintenance) {
-    const modalRef = this.modalService.open(DeleteMaintenanceComponent, {
-      centered: true,
-    });
-    modalRef.componentInstance.maintenance = maintenance;
-  }
-  updateMaintenance(maintenance: Maintenance) {
-    const modalRef = this.modalService.open(UpdateMaintenanceComponent, {
-      centered: true,
-    });
-    modalRef.componentInstance.maintenance = maintenance;
-  }
+  // addMaintenance(maintenance: Maintenance) {
+  //   const modalRef = this.modalService.open(AddMaintenanceComponent, {
+  //     centered: true,
+  //   });
+  //   modalRef.componentInstance.maintenance = maintenance;
+  // }
+  // deleteMaintenance(maintenance: Maintenance) {
+  //   const modalRef = this.modalService.open(DeleteMaintenanceComponent, {
+  //     centered: true,
+  //   });
+  //   modalRef.componentInstance.maintenance = maintenance;
+  // }
+  // updateMaintenance(maintenance: Maintenance) {
+  //   const modalRef = this.modalService.open(UpdateMaintenanceComponent, {
+  //     centered: true,
+  //   });
+  //   modalRef.componentInstance.maintenance = maintenance;
+  // }
 }

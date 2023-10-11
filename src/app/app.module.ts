@@ -25,9 +25,6 @@ import { AddBrandComponent } from './components/car-process/add-brand/add-brand.
 import { DeleteBrandComponent } from './components/car-process/delete-brand/delete-brand.component';
 import { UpdateBrandComponent } from './components/car-process/update-brand/update-brand.component';
 import { AddModelComponent } from './components/car-process/add-model/add-model.component';
-import { AddMaintenanceComponent } from './components/car-process/add-maintenance/add-maintenance.component';
-import { UpdateMaintenanceComponent } from './components/car-process/update-maintenance/update-maintenance.component';
-import { DeleteMaintenanceComponent } from './components/car-process/delete-maintenance/delete-maintenance.component';
 
 @NgModule({
   declarations: [
@@ -47,10 +44,7 @@ import { DeleteMaintenanceComponent } from './components/car-process/delete-main
     AddBrandComponent,
     DeleteBrandComponent,
     UpdateBrandComponent,
-    AddModelComponent,
-    AddMaintenanceComponent,
-    UpdateMaintenanceComponent,
-    DeleteMaintenanceComponent
+    AddModelComponent
   ],
   imports: [
     BrowserModule,
