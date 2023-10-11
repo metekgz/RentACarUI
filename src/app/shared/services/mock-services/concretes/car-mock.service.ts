@@ -7,7 +7,7 @@ import { Car } from 'src/app/shared/models/car';
 @Injectable({
   providedIn: 'root',
 })
-export  class CarMockService implements CarAbstractService {
+export class CarMockService implements CarAbstractService {
   apiUrl = 'http://localhost:3000/cars';
 
   constructor(private httpClient: HttpClient) {}
@@ -17,14 +17,11 @@ export  class CarMockService implements CarAbstractService {
   }
 
   getCars(): Observable<Car[]> {
-    return this.httpClient.get<Car[]>(
-      this.apiUrl + '?_expand=model&_expand=brand/'
-    );
+    return this.httpClient.get<Car[]>(this.apiUrl);
   }
 
   getCarsByBrand(brandId: number): Observable<Car[]> {
-    return this.httpClient
-      .get<Car[]>(this.apiUrl + '?_expand=model&_expand=brand/')
-      .pipe(map((cars) => cars.filter((car) => car.model.brandId == brandId)));
+    const url = `${this.apiUrl}?model.brandId=${brandId}`;
+    return this.httpClient.get<Car[]>(url);
   }
 }
