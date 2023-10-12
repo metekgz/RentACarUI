@@ -12,7 +12,7 @@ import { Car } from '../../models/car'; // Car modelini içe aktarıyoruz
 })
 export class DeleteCarComponent implements OnInit {
   carDelete: FormGroup;
-  car: Car; // Aracı saklayacak değişken
+  car: Car;
 
   constructor(
     private formBuilder: FormBuilder,

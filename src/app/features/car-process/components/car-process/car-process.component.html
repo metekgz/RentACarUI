@@ -1,86 +1,23 @@
-<!-- <div>
-  <button
-    type="button"
-    class="btn btn-primary mt-4"
-    data-toggle="modal"
-    (click)="addCar(car)"
-    data-target="#exampleModalCenter"
-  >
-    Car Add
-  </button>
-  <span style="margin: 0 10px"></span>
-  <button
-    type="button"
-    class="btn btn-primary mt-4"
-    data-toggle="modal"
-    (click)="deleteCar(car)"
-    data-target="#exampleModalCenter"
-  >
-    Car Delete
-  </button>
-  <span style="margin: 0 10px"></span>
-  <button
-    type="button"
-    class="btn btn-primary mt-4"
-    data-toggle="modal"
-    (click)="updateCar(car)"
-    data-target="#exampleModalCenter"
-  >
-    Car Update
-  </button>
-</div>
-<div>
-  <hr class="mt-4" />
-  <button
-    type="button"
-    class="btn btn-primary mt-2"
-    data-toggle="modal"
-    (click)="addBrand(brand)"
-    data-target="#exampleModalCenter"
-  >
-    Brand Add
-  </button>
-  <span style="margin: 0 10px"></span>
-  <button
-    type="button"
-    class="btn btn-primary mt-2"
-    data-toggle="modal"
-    (click)="deleteBrand(brand)"
-    data-target="#exampleModalCenter"
-  >
-    Brand Delete
-  </button>
-  <span style="margin: 0 10px"></span>
-  <button
-    type="button"
-    class="btn btn-primary mt-2"
-    data-toggle="modal"
-    (click)="updateBrand(brand)"
-    data-target="#exampleModalCenter"
-  >
-    Brand Update
-  </button>
-</div>
-<hr class="mt-4" />
-<div>
-  <button
-    type="button"
-    class="btn btn-primary mt-2"
-    data-toggle="modal"
-    (click)="addModel(model)"
-    data-target="#exampleModalCenter"
-  >
-    Model Add
-  </button>
+<div class="mt-2 mb-2">
+  <input
+    type="text"
+    [(ngModel)]="filterText"
+    class="form-control"
+    id="filterText"
+    placeholder="Aradığınız Brand'i giriniz"
+  />
 </div>
 
-<hr class="mt-4" />
-<h4>Add Procedure => Brand -> Model -> Car</h4> -->
+<div *ngIf="filterText" class="alert alert-primary">
+  {{ filterText }}
+</div>
+
+
 
 <table class="table mt-4">
   <thead>
     <tr>
-      <th>Car Name</th>
+      <th>Plate</th>
       <th>Brand Name</th>
       <th>Daily Price</th>
       <th>State</th>
@@ -89,7 +26,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let car of cars">
+    <tr *ngFor="let car of cars | filter : filterText" >
       <td>{{ car.plate }}</td>
       <td>{{ car.model.name }}</td>
       <td>{{ car.dailyPrice }}</td>

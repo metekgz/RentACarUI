@@ -102,5 +102,4 @@ export class CarProcessComponent implements OnInit {
       this.cars = response;
     });
   }
-  
 }
