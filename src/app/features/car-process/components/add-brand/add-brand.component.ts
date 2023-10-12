@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
-import { BrandService } from 'src/app/shared/services/brand.service';
+import { BrandService } from '../../services/brand.service';
 
 @Component({
   selector: 'app-add-brand',

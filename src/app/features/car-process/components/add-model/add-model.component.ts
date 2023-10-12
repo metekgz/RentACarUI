@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModelService } from 'src/app/shared/services/model.service';
+import { ModelService } from '../../services/model.service';
 
 @Component({
   selector: 'app-add-model',

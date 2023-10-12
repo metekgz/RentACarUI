@@ -3,8 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RentComponent } from '../rent/rent.component';
-import { Car } from 'src/app/shared/models/car';
-import { CarAbstractService } from 'src/app/shared/services/mock-services/abstracts/car-abstract.service';
+import { CarAbstractService } from 'src/app/features/car-process/services/mock-services/abstracts/car-abstract.service';
+import { Car } from 'src/app/features/car-process/models/car';
 
 @Component({
   selector: 'app-car',

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
-import { CarService } from 'src/app/shared/services/car.service';
+import { CarService } from '../../services/car.service';
 
 @Component({
   selector: 'app-delete-car',

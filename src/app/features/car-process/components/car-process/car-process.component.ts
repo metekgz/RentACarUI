@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { CarAddComponent } from './add-car/car-add.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { DeleteCarComponent } from './delete-car/delete-car.component';
-import { UpdateCarComponent } from './update-car/update-car.component';
-import { AddBrandComponent } from './add-brand/add-brand.component';
-import { DeleteBrandComponent } from './delete-brand/delete-brand.component';
-import { UpdateBrandComponent } from './update-brand/update-brand.component';
-import { AddModelComponent } from './add-model/add-model.component';
-import { Brand } from 'src/app/shared/models/brand';
-import { Car } from 'src/app/shared/models/car';
-import { Model } from 'src/app/shared/models/model';
+import { Brand } from '../../models/brand';
+import { Car } from '../../models/car';
+import { Model } from '../../models/model';
+import { AddBrandComponent } from '../add-brand/add-brand.component';
+import { CarAddComponent } from '../add-car/car-add.component';
+import { AddModelComponent } from '../add-model/add-model.component';
+import { DeleteBrandComponent } from '../delete-brand/delete-brand.component';
+import { DeleteCarComponent } from '../delete-car/delete-car.component';
+import { UpdateBrandComponent } from '../update-brand/update-brand.component';
+import { UpdateCarComponent } from '../update-car/update-car.component';
 
 @Component({
   selector: 'app-car-process',

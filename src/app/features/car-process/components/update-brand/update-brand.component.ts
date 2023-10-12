@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { BrandService } from 'src/app/shared/services/brand.service';
+import { BrandService } from '../../services/brand.service';
 
 @Component({
   selector: 'app-update-brand',
