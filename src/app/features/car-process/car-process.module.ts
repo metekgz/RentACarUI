@@ -33,7 +33,7 @@ import { CarMockService } from './services/mock-services/concretes/car-mock.serv
     FormsModule,
     NgbModule,
     ReactiveFormsModule,
-    SharedModule,
+    SharedModule
   ],
   providers: [
     {

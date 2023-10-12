@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { CarService } from '../../services/car.service';
+import { Car } from '../../models/car';
 
 @Component({
   selector: 'app-update-car',
@@ -11,6 +12,8 @@ import { CarService } from '../../services/car.service';
 })
 export class UpdateCarComponent implements OnInit {
   carUpdate: FormGroup;
+  car: Car;
+
   constructor(
     private formBuilder: FormBuilder,
     private carService: CarService,
@@ -24,13 +27,13 @@ export class UpdateCarComponent implements OnInit {
 
   updateCar() {
     this.carUpdate = this.formBuilder.group({
-      id: ['', Validators.required],
-      plate: ['', Validators.required],
-      dailyPrice: ['', Validators.required],
-      modelYear: ['', Validators.required],
-      state: ['', Validators.required],
-      modelId: ['', Validators.required],
-      carImg: ['', Validators.required],
+      id: [this.car.id, Validators.required],
+      plate: [this.car.plate, Validators.required],
+      dailyPrice: [this.car.dailyPrice, Validators.required],
+      modelYear: [this.car.modelYear, Validators.required],
+      state: [this.car.state, Validators.required],
+      modelId: [this.car.modelId, Validators.required],
+      carImg: [this.car.imageUrl, Validators.required],
     });
   }
 
@@ -39,11 +42,10 @@ export class UpdateCarComponent implements OnInit {
       let carModel = Object.assign({}, this.carUpdate.value);
       this.carService.updateCar(carModel).subscribe((response) => {
         console.log(response);
-
-        this.toastrService.success('Araç Eklendi');
+        this.toastrService.success('Araç güncellendi');
       });
     } else {
-      this.toastrService.error('form eksik veya hatalı');
+      this.toastrService.error('Form eksik veya hatalı');
     }
   }
 }

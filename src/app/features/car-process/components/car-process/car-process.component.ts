@@ -10,6 +10,7 @@ import { DeleteBrandComponent } from '../delete-brand/delete-brand.component';
 import { DeleteCarComponent } from '../delete-car/delete-car.component';
 import { UpdateBrandComponent } from '../update-brand/update-brand.component';
 import { UpdateCarComponent } from '../update-car/update-car.component';
+import { CarAbstractService } from '../../services/mock-services/abstracts/car-abstract.service';
 
 @Component({
   selector: 'app-car-process',
@@ -26,8 +27,13 @@ export class CarProcessComponent implements OnInit {
   filterText = '';
   showInfo: boolean[] = [];
 
-  constructor(private modalService: NgbModal) {}
-  ngOnInit(): void {}
+  constructor(
+    private modalService: NgbModal,
+    private carService: CarAbstractService
+  ) {}
+  ngOnInit(): void {
+    this.getCars();
+  }
 
   addCar(car: Car) {
     const modalRef = this.modalService.open(CarAddComponent, {
@@ -90,4 +96,11 @@ export class CarProcessComponent implements OnInit {
   //   });
   //   modalRef.componentInstance.maintenance = maintenance;
   // }
+
+  getCars() {
+    this.carService.getCars().subscribe((response) => {
+      this.cars = response;
+    });
+  }
+  
 }

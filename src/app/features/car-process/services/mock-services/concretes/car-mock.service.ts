@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable } from 'rxjs';
 import { CarAbstractService } from '../abstracts/car-abstract.service';
 import { HttpClient } from '@angular/common/http';
 import { Car } from '../../../models/car';
@@ -10,11 +10,8 @@ import { Car } from '../../../models/car';
 export class CarMockService implements CarAbstractService {
   apiUrl = 'http://localhost:3000/cars';
 
+  // burada subs ol
   constructor(private httpClient: HttpClient) {}
-
-  getBrands(): Observable<Car[]> {
-    return this.httpClient.get<Car[]>(this.apiUrl);
-  }
 
   getCars(): Observable<Car[]> {
     return this.httpClient.get<Car[]>(this.apiUrl);

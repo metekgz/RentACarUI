@@ -39,6 +39,7 @@ export class CarComponent implements OnInit {
     modalRef.componentInstance.car = car;
   }
 
+  // burada next gibi bişi var
   getCars() {
     this.carService.getCars().subscribe((response) => {
       this.cars = response;
@@ -53,6 +54,7 @@ export class CarComponent implements OnInit {
     });
   }
 
+  // ayrı method yap
   initializeShowInfoArray() {
     this.showInfo = Array(this.cars.length).fill(false);
   }

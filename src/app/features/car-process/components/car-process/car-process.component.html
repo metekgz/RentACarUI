@@ -77,21 +77,45 @@
 <hr class="mt-4" />
 <h4>Add Procedure => Brand -> Model -> Car</h4> -->
 
-<table class="table">
+<table class="table mt-4">
   <thead>
     <tr>
       <th>Car Name</th>
       <th>Brand Name</th>
       <th>Daily Price</th>
       <th>State</th>
+      <th>Update</th>
+      <th>Delete</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let car of cars">
-      <td>{{car.modelName}}</td>
-      <td>{{car.model.name}}</td>
-      <td>{{car.dailyPrice}}</td>
-      <td>{{car.state}}</td>
+      <td>{{ car.plate }}</td>
+      <td>{{ car.model.name }}</td>
+      <td>{{ car.dailyPrice }}</td>
+      <td>{{ car.state }}</td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-toggle="modal"
+          (click)="updateCar(car)"
+          data-target="#exampleModalCenter"
+        >
+          Car Update
+        </button>
+      </td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-toggle="modal"
+          (click)="deleteCar(car)"
+          data-target="#exampleModalCenter"
+        >
+          Car Delete
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>

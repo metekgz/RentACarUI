@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { CarService } from '../../services/car.service';
+import { Car } from '../../models/car'; // Car modelini içe aktarıyoruz
 
 @Component({
   selector: 'app-delete-car',
@@ -11,6 +12,8 @@ import { CarService } from '../../services/car.service';
 })
 export class DeleteCarComponent implements OnInit {
   carDelete: FormGroup;
+  car: Car; // Aracı saklayacak değişken
+
   constructor(
     private formBuilder: FormBuilder,
     private carService: CarService,
@@ -24,7 +27,7 @@ export class DeleteCarComponent implements OnInit {
 
   deleteCar() {
     this.carDelete = this.formBuilder.group({
-      id: ['', Validators.required],
+      id: [this.car.id, Validators.required],
     });
   }
 
